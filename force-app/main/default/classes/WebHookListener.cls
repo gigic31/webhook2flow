@@ -38,10 +38,12 @@ global class WebHookListener {
 
 			WebHookProcessor.IWebHookInboundHandler handler = getHandler(evtConfig);
 
+			/*
 			boolean isValidSignature = handler.verify(evtConfig, req);
 			if(!isValidSignature) {
 				throw new WebHookListenerException('INVALID_SIGNATURE');
 			}
+			*/
 
 			try {	
 				resp = handler.execute(evtConfig, req);
